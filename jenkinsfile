@@ -29,7 +29,6 @@ pipeline {
         stage('Building images (spring and mongo)') {
             steps {
                 script {
-                    // If you have Dockerfile(s) for Spring and Mongo services
                     sh 'docker-compose build'
                 }
             }
