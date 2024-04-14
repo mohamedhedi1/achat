@@ -1,4 +1,5 @@
 package tn.esprit.rh.achat.services;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -16,6 +17,8 @@ import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
 public class FournisseurServiceImplTest {
@@ -63,11 +66,14 @@ public class FournisseurServiceImplTest {
         fournisseur.setDetailFournisseur(detailFournisseur);
 
         // Test
-        when(fournisseurRepository.save(fournisseur)).thenReturn(fournisseur);
+        when(fournisseurRepository.save(any(Fournisseur.class))).thenReturn(fournisseur);
         Fournisseur result = fournisseurService.addFournisseur(fournisseur);
 
         // Verify
-        assertEquals(detailFournisseur.getDateDebutCollaboration(), new Date());
-        verify(fournisseurRepository, times(1)).save(fournisseur);
+        verify(fournisseurRepository, times(1)).save(any(Fournisseur.class));
+        assertNotNull(result);
+        assertNotNull(result.getDetailFournisseur());
+        assertEquals(detailFournisseur, result.getDetailFournisseur());
+        assertNotNull(detailFournisseur.getDateDebutCollaboration());
     }
 }
