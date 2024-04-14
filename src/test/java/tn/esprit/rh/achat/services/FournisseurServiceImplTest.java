@@ -1,5 +1,5 @@
 package tn.esprit.rh.achat.services;
-
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -15,14 +15,20 @@ public class FournisseurServiceImplTest {
     @InjectMocks
     private FournisseurServiceImpl fournisseurService;
 
+    @BeforeEach
     public void setUp() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
     public void testDeleteFournisseur() {
+        // Mock data
         Long fournisseurId = 1L;
+
+        // Test
         fournisseurService.deleteFournisseur(fournisseurId);
+
+        // Verify that deleteById method is called with correct fournisseurId
         verify(fournisseurRepository).deleteById(fournisseurId);
     }
 }
