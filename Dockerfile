@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-alpine
+FROM openjdk:17-jdk-alpine
 
 # Expose le port de l'application Spring Boot
 EXPOSE 8089
