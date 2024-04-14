@@ -4,11 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import tn.esprit.rh.achat.entities.Fournisseur;
 import tn.esprit.rh.achat.repositories.FournisseurRepository;
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class FournisseurServiceImplTest {
@@ -24,11 +20,9 @@ public class FournisseurServiceImplTest {
     }
 
     @Test
-    public void testRetrieveFournisseur() {
+    public void testDeleteFournisseur() {
         Long fournisseurId = 1L;
-        Fournisseur expectedFournisseur = new Fournisseur();
-        when(fournisseurRepository.findById(fournisseurId)).thenReturn(Optional.of(expectedFournisseur));
-        Fournisseur actualFournisseur = fournisseurService.retrieveFournisseur(fournisseurId);
-        assertEquals(expectedFournisseur, actualFournisseur);
+        fournisseurService.deleteFournisseur(fournisseurId);
+        verify(fournisseurRepository).deleteById(fournisseurId);
     }
 }
