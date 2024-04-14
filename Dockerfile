@@ -1,11 +1,7 @@
-# Use an official OpenJDK runtime as a parent image
-FROM openjdk:8-jdk-alpine
+FROM openjdk:17-jdk-alpine
 
-# Set the working directory in the container
-WORKDIR /app
+EXPOSE 8089
 
-# Copy the application JAR file into the container at /app
-COPY target/achat-1.0.jar /app
+ADD target/achat-1.0.jar achat-1.0.jar
 
-# Specify the command to run on container startup
-CMD ["java", "-jar", "achat-1.0.jar"]
+ENTRYPOINT ["java", "-jar", "/achat-1.0.jar"]
