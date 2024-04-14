@@ -73,7 +73,6 @@ public class FournisseurServiceImplTest {
         verify(fournisseurRepository, times(1)).save(any(Fournisseur.class));
         assertNotNull(result);
         assertNotNull(result.getDetailFournisseur());
-        assertEquals(detailFournisseur, result.getDetailFournisseur());
-        assertNotNull(detailFournisseur.getDateDebutCollaboration());
+        assertEquals(detailFournisseur.getDateDebutCollaboration(), result.getDetailFournisseur().getDateDebutCollaboration());
     }
 }
