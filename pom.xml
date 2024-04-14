@@ -55,6 +55,13 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -78,12 +85,13 @@
 				<version>3.2.5</version>
 				<dependencies>
 					<dependency>
-						<groupId>org.apache.maven.surefire</groupId>
-						<artifactId>surefire-junit47</artifactId>
-						<version>3.2.5</version>
+						<groupId>junit</groupId>
+						<artifactId>junit</artifactId>
+						<version>4.13.2</version>
 					</dependency>
 				</dependencies>
 			</plugin>
+
 		</plugins>
 	</build>
 
