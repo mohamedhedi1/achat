@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ROOT_PASSWORD=my_secret_password  # Set your desired root password here
       - MYSQL_DATABASE=achatdb
     ports:
       - 3306:3306
@@ -32,4 +32,3 @@ services:
 
 volumes:
   db:
-
