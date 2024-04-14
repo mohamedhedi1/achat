@@ -5,7 +5,7 @@ services:
     image: mysql:5.7
     restart: unless-stopped
     environment:
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: achat
       MYSQL_DATABASE: achatdb
     ports:
       - "3306:3306"
@@ -18,13 +18,13 @@ services:
     image: azizsouissi/achat:1.0.0
     restart: on-failure
     ports:
-      - "8082:8082"
+      - "8071:8071"
     environment:
       SPRING_APPLICATION_JSON: >-
         {
           "spring.datasource.url": "jdbc:mysql://mysqldb:3306/achatdb?createDatabaseIfNotExist=true",
           "spring.datasource.username": "root",
-          "spring.datasource.password": "secret",
+          "spring.datasource.password": "achat",
           "spring.jpa.properties.hibernate.dialect": "org.hibernate.dialect.MySQL5InnoDBDialect",
           "spring.jpa.hibernate.ddl-auto": "update"
         }
