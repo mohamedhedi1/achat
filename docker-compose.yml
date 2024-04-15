@@ -29,5 +29,8 @@ services:
           "spring.jpa.hibernate.ddl-auto": "update"
         }
     tty: true
+    volumes:
+      db:
+  
 
 
