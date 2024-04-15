@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD:  new_password # Set your desired root password here
       MYSQL_DATABASE: achatdb
     ports:
-      - "3336:3336"
+      - "3340:3340"
     volumes:
       - db:/var/lib/mysql
 
