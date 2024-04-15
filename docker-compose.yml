@@ -18,7 +18,7 @@ services:
     image: haythemmekki742/timesheet-devops:1.0.0
     restart: on-failure
     ports:
-      - "8071:8071"
+      - "8082:8082"
     environment:
       SPRING_APPLICATION_JSON: >-
         {
