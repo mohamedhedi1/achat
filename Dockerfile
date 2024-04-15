@@ -1,6 +1,4 @@
-FROM openjdk:11 as build
-COPY . .
-RUN mvn clean package -DskipTests
-COPY --from=build /target/achat-1.0.jar achat.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","achat.jar"]
+FROM openjdk:11
+EXPOSE 8089
+ADD target/achat-1.0.jar achat-1.0.jar
+ENTRYPOINT ["java","-jar","/achat-1.0.jar"]
