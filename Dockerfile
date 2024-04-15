@@ -1,6 +1,6 @@
 FROM openjdk:17-jdk-alpine
 
-EXPOSE 8082
+EXPOSE 8085
 
 ADD target/achat-1.0.jar achat-1.0.jar
 
